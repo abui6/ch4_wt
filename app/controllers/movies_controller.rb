@@ -4,6 +4,11 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
   
+  def new
+  @movie = Movie.new
+  # default: render 'new' template
+  end 
+  
   private
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
